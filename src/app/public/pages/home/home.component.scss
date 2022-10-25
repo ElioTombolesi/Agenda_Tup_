@@ -5,6 +5,15 @@
   background-color: #1C198A;
 }
 
+button{
+
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 .flex-container {
   display: flex;
   background: #1C198A;
@@ -38,16 +47,11 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 
 }
 
-.but{
 
-  background:#1C198A;
-  text-align: center;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
 
 .button{
 
