@@ -1,5 +1,5 @@
 <H1> <div class="container">
-        <div  class="button" [routerLink]="['lista-contactos']" >CONTACTOS
+        <div  class="button" >CONTACTOS
             <div class="icon-contacts">
             <img src="../assets/img/account.png" alt="" width="35">
             </div>
@@ -18,9 +18,9 @@
                 <input class="box" type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your password">
             </div>
         
-            <div class="but">
-                <button type="submit" [disabled]="form.invalid">Log In</button>
-                <button type="button" [routerLink]="['signin']">Sign In</button>
+            <div >
+                <button [routerLink]="['lista-contactos']" type="submit" [disabled]="form.invalid">Log In</button>
+                
               </div>
         </form>
       </div>
