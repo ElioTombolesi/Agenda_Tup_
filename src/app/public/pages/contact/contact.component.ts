@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contact, contacts } from 'src/app/core/interface/contacts';
+import { Contact } from 'src/app/core/interface/contacts';
 import { DemoService } from 'src/app/core/services/demo.service';
 
 @Component({
@@ -12,19 +12,22 @@ export class ContactComponent implements OnInit {
   
   constructor(private ar:ActivatedRoute, private contactService : DemoService) { }
 
-  contact: Contact = contacts[0];
+
+
+  cartel =  false;
 
   contacto: Contact = {
     id: 0,
-  first_name: "",
-  last_name: "",
-  phone1: "",
-  phone2: "",
-  city: "",
-  email:""
+    first_name: "",
+    userId: 0,
+    dispositivos: []
   }
+  contactos: Contact[]=[]
+
 
   ngOnInit(): void {
+    
+   this.getContacs()
     this.ar.params.subscribe(data =>{
       console.log(data)
       this.contactService.getContactById(1)
@@ -34,5 +37,10 @@ export class ContactComponent implements OnInit {
        console.log(this.contacto)
       });
     })
+  }
+
+
+  async getContacs (){
+    this.contactos= await this.contactService.getContacs()
   }
 }
