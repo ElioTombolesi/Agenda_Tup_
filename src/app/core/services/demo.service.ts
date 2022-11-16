@@ -13,10 +13,10 @@ export class DemoService {
     return await res.json();
   }
 
-  async getUsers (id:number)//: Promise<Contact> esto iria despues leer aputne
+  async getContacs () 
   {
-
-    console.log("Aca te devuelve ");
+    const res = await fetch("https://localhost:7263/api/Contact")
+    return res.json();
   
   }
 
